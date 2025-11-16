@@ -3,15 +3,16 @@
   color: #eee;
   padding: 40px 20px;
   font-family: 'Segoe UI', sans-serif;
-  width: 100vw;
+  width: 90vw;
   box-sizing: border-box;
+  text-align: left;
 }
 
 /* GRID layout for columns */
 .footer-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
+  gap: 10px;
   margin-bottom: 20px;
   width: 100%;
 }

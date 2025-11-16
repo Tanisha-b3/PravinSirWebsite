@@ -6,6 +6,7 @@ import Header from './components/header'
 import About from './components/about'
 import Contact from './components/contact'
 import Hero from './components/hero'
+import Footer from './components/footer'
 
 function App() {
 

@@ -1,5 +1,7 @@
 import React from 'react';
-import './Footer.css';
+import './footer.css';
+import { FaLinkedin, FaYoutube, FaInstagram, FaXTwitter } from 'react-icons/fa6';
+
 
 const Footer = () => {
     return (
@@ -18,18 +20,19 @@ const Footer = () => {
                     <p><a href="mailto:hello@pravinmishra.com">hello@pravinmishra.com</a></p>
                     <div className="social-icons">
                         <a href="https://www.linkedin.com/in/pravin-mishra-aws-trainer/" target="_blank" rel="noopener noreferrer">
-                            <i className="fab fa-linkedin" style={{ color: '#0077b5' }}></i>
+                            <FaLinkedin style={{ color: '#0077b5' }} />
                         </a>
                         <a href="https://www.youtube.com/@awswithpravinmishra" target="_blank" rel="noopener noreferrer">
-                            <i className="fab fa-youtube" style={{ color: '#ff0000' }}></i>
+                            <FaYoutube style={{ color: '#ff0000' }} />
                         </a>
                         <a href="https://www.instagram.com/awspravinmishra" target="_blank" rel="noopener noreferrer">
-                            <i className="fab fa-instagram" style={{ color: '#e1306c' }}></i>
+                            <FaInstagram style={{ color: '#e1306c' }} />
                         </a>
                         <a href="https://x.com/pravinmishra88" target="_blank" rel="noopener noreferrer">
-                            <i className="fab fa-x" style={{ color: '#e1306c' }}></i>
+                            <FaXTwitter style={{ color: '#ccc' }} />
                         </a>
                     </div>
+
                 </div>
                 {/* Links */}
                 <div className="footer-column">
