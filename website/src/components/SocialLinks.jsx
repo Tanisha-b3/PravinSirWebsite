@@ -1,63 +1,74 @@
 import React from "react";
-import { FaYoutube, FaFacebook, FaLinkedin, FaTwitter, FaBlog } from "react-icons/fa";
+import {
+  FaYoutube,
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
+  FaGithub,
+  FaGraduationCap,
+} from "react-icons/fa";
 
 const SocialLinks = () => {
   const links = [
     {
-      name: "YouTube",
-      url: "https://youtube.com",
-      icon: <FaYoutube size={40} className="text-red-600" />,
+      name: "Udemy",
+      url: "https://www.udemy.com/user/pravin-mishra-30/?kw=prav&src=sac",
+      icon: <FaGraduationCap size={38} className="text-yellow-600" />,
     },
     {
-      name: "Facebook",
-      url: "https://facebook.com",
-      icon: <FaFacebook size={40} className="text-blue-600" />,
+      name: "YouTube",
+      url: "https://www.youtube.com/results?search_query=pravin+mishra",
+      icon: <FaYoutube size={38} className="text-red-600" />,
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com",
-      icon: <FaLinkedin size={40} className="text-blue-700" />,
+      url: "https://www.linkedin.com/in/pravin-mishra-aws-trainer/",
+      icon: <FaLinkedin size={38} className="text-blue-700" />,
     },
     {
-      name: "Twitter",
-      url: "https://twitter.com",
-      icon: <FaTwitter size={40} className="text-blue-500" />,
+      name: "Twitter (X)",
+      url: "https://x.com/pravinmishra88",
+      icon: <FaTwitter size={38} className="text-black" />,
     },
     {
-      name: "Blogs",
-      url: "#blogs",
-      icon: <FaBlog size={40} className="text-gray-600" />,
+      name: "Instagram",
+      url: "https://www.instagram.com/awspravinmishra/",
+      icon: <FaInstagram size={38} className="text-pink-600" />,
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/pravinmishraaws",
+      icon: <FaGithub size={38} className="text-gray-900" />,
     },
   ];
 
   return (
-    <section
-      className="w-full py-10 font-jakarta text-center"
-      style={{ backgroundColor: "#F9FAFB" }}
-    >
-      <h2 className="text-3xl font-bold tracking-wide mb-4" style={{ color: "#232F3E" }}>
-        Connect with Pravin Online
+    <section className="w-full py-20 font-jakarta text-center bg-white">
+      {/* Heading */}
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+        Connect with <span className="text-yellow-600">Pravin Mishra</span>
       </h2>
-      <p className="text-gray-600 mb-12">
-        Join the cloud journey — follow for insights, updates, and tutorials
+
+      <p className="text-gray-600 mb-12 text-lg max-w-2xl mx-auto">
+        Follow Pravin for updates, insights, and tutorials on Cloud & DevOps
       </p>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-        {links.map(({ name, url, icon }) => (
+      {/* Simple Cards */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 px-6">
+        {links.map(({ name, url, icon }, i) => (
           <a
-            key={name}
+            key={i}
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-white shadow-md rounded-xl p-6 flex flex-col items-center justify-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-            style={{ borderTop: "4px solid #0078D4" }}
+            className="
+              bg-white border border-gray-200 rounded-xl 
+              p-6 flex flex-col items-center justify-center
+              hover:shadow-lg hover:-translate-y-2 transition-all duration-300
+            "
           >
-            <div className="mb-3 transition-transform group-hover:scale-110">
-              {icon}
-            </div>
-            <span className="font-semibold text-[#232F3E] transition-colors group-hover:text-[#FF9900]">
-              {name}
-            </span>
+            <div className="mb-3">{icon}</div>
+            <span className="font-semibold text-black">{name}</span>
           </a>
         ))}
       </div>

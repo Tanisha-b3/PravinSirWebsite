@@ -6,6 +6,7 @@ const Header = () => {
     { label: "University", url: "/university" },
     { label: "Blog", url: "/blog" },
     { label: "Book", url: "/book" },
+    
     { label: "Courses", url: "/courses" },
     { label: "Contact", url: "/contact", accent: true },
   ];
@@ -44,7 +45,7 @@ const Header = () => {
           duration-200
         "
       >
-        <span className="text-[#FF9900]">Cloud</span>Advisory
+        <span className="text-[#FF9900]">Pravin</span>Mishra
       </a>
 
       {/* Navigation */}

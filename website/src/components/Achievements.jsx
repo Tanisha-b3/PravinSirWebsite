@@ -4,74 +4,110 @@ import { FaAmazon, FaYoutube, FaLinkedin, FaInstagram, FaBook } from "react-icon
 const LearnersTrust = () => {
   const data = [
     {
-      icon: <FaAmazon size={40} className="text-[#FF9900]" />, // Amazon Orange
+      icon: <FaAmazon size={34} className="text-[#FF9900]" />,
       title: "Amazon Author Page",
-      subtitle: "View all my published books",
-      url: "#",
+      subtitle: "Explore all books written by Pravin",
+      url: "https://www.amazon.in/s?k=Pravin+Mishra&i=stripbooks",
     },
     {
-      icon: <FaYoutube size={40} className="text-red-600" />,
+      icon: <FaYoutube size={34} className="text-red-500" />,
       title: "11K+ YouTube Subscribers",
-      subtitle: "Free hands-on cloud lessons weekly",
-      url: "#",
+      subtitle: "Weekly hands-on cloud tutorials",
+      url: "https://www.youtube.com/results?search_query=pravin+mishra",
     },
     {
-      icon: <FaLinkedin size={40} className="text-blue-700" />,
+      icon: <FaLinkedin size={34} className="text-blue-700" />,
       title: "20K+ LinkedIn Followers",
-      subtitle: "Follow me for daily cloud insights",
-      url: "#",
+      subtitle: "Daily cloud insights & updates",
+      url: "https://www.linkedin.com/in/pravin-mishra-aws-trainer/",
     },
     {
-      icon: <FaInstagram size={40} className="text-pink-500" />,
+      icon: <FaInstagram size={34} className="text-pink-500" />,
       title: "2K+ Instagram Followers",
-      subtitle: "Behind the scenes of cloud training",
-      url: "#",
+      subtitle: "Behind the scenes of cloud teaching",
+      url: "https://www.instagram.com/awspravinmishra/",
     },
     {
-      icon: <FaBook size={40} className="text-[#232F3E]" />, // Dark tone
+      icon: <FaBook size={34} className="text-gray-800" />,
       title: "Author of 3 Books",
-      subtitle: "Published on Amazon & Apress",
-      url: "#",
+      subtitle: "Published on Apress & Amazon",
+      url: "https://github.com/pravinmishraaws",
     },
   ];
 
   return (
-    <section className="w-full py-20 px-6 font-jakarta" style={{ backgroundColor: "#F9FAFB" }}>
-      <h2 className="text-center text-3xl font-bold mb-2" style={{ color: "#232F3E" }}>
-        Learners Worldwide Trust Pravin Mishra
-      </h2>
+    <section className="w-full py-24 px-6 font-sans bg-white">
+      
+      {/* Section Header */}
+      <div className="text-center mb-14">
+        <span className="text-sm text-yellow-600 font-semibold tracking-wide uppercase">
+          Community
+        </span>
 
-      <p className="text-center text-gray-600 mb-14">
-        Backed by a strong community, expert content, and real-world cloud training
-      </p>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-3">
+          Trusted by Learners Worldwide
+        </h2>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 text-center">
+        <p className="text-gray-600 max-w-2xl mx-auto">
+          A growing global community of cloud aspirants, engineers, and professionals learning with Pravin Mishra.
+        </p>
+      </div>
+
+      {/* Cards Grid */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
         {data.map((item, i) => (
-          <div
+          <a
             key={i}
-            className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-transform hover:-translate-y-2"
-            style={{ borderTop: "4px solid #0078D4" }} // Azure Blue
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              bg-white border border-gray-200 rounded-xl p-8 text-center
+              shadow-sm hover:shadow-xl 
+              transition-all duration-300 hover:-translate-y-2
+            "
           >
-            <div className="flex justify-center mb-4">
-              {item.icon}
-            </div>
+            {/* Icon */}
+            <div className="mb-4">{item.icon}</div>
 
-            <h3
-              className="font-bold text-lg underline underline-offset-2"
-              style={{ color: "#232F3E" }}
-            >
+            {/* Title */}
+            <h3 className="font-semibold text-lg text-gray-900 mb-2">
               {item.title}
             </h3>
 
-            <a
-              href={item.url}
-              className="block mt-2 text-sm hover:text-[#FF9900] underline transition"
-            >
+            {/* Subtitle */}
+            <p className="text-gray-600 text-sm">
               {item.subtitle}
-            </a>
-          </div>
+            </p>
+
+            {/* Accent Line */}
+            <div className="
+              w-10 h-[3px] bg-yellow-500 mx-auto mt-5 rounded-full 
+              transition-all duration-300 opacity-0 group-hover:opacity-100
+            "></div>
+          </a>
         ))}
       </div>
+
+      {/* Stats Row */}
+      <div className="max-w-6xl mx-auto mt-16 pt-10 border-t border-gray-200">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 text-center">
+          {[
+            { number: "33K+", label: "Total Followers" },
+            { number: "11K+", label: "YouTube Subs" },
+            { number: "20K+", label: "LinkedIn Network" },
+            { number: "3", label: "Published Books" },
+          ].map((stat, index) => (
+            <div key={index}>
+              <h3 className="text-3xl font-bold text-yellow-600">
+                {stat.number}
+              </h3>
+              <p className="text-gray-600 text-sm">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </section>
   );
 };
