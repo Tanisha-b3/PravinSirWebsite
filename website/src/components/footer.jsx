@@ -62,7 +62,7 @@ export default function Footer() {
 
               {/* Instagram */}
               <a
-                href="mailto:info@figuringservices.com"
+                href="mailto:contact@pravinmishra.com"
                 className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center
                   hover:bg-yellow-400 hover:text-black transition-all duration-200"
               >
@@ -95,7 +95,7 @@ export default function Footer() {
 
               {/* YOUTUBE */}
               <a
-                href="https://www.youtube.com/results?search_query=pravin+mishra"
+                href="https://www.youtube.com/@awswithpravinmishra"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center
@@ -104,25 +104,7 @@ export default function Footer() {
                 <Youtube size={22} />
               </a>
 
-              {/* UDEMY */}
-              {/* <a
-                href="https://www.udemy.com/user/pravin-mishra-30/?kw=prav&src=sac"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center
-                           hover:bg-yellow-400 hover:text-black transition-all duration-200"
-              > */}
-                {/* Udemy SVG */}
-                {/* <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 256 256"
-                  fill="currentColor"
-                >
-                  <path d="M10 15l5.19-3L10 9v6zm12-3c0 0-0-4-0.52-5.97-0.29-1.09-1.14-1.95-2.23-2.24C17.48 3.26 12 3.26 12 3.26s-5.48 0-7.25.53c-1.09.29-1.94 1.15-2.23 2.24C2 8 2 12 2 12s0 4 0.52 5.97c.29 1.09 1.14 1.95 2.23 2.24 1.77.53 7.25.53 7.25.53s5.48 0 7.25-.53c1.09-.29 1.94-1.15 2.23-2.24C22 16 22 12 22 12z"/>
-                </svg>
-              </a> */}
-
+              
             </div>
           </div>
 
@@ -147,7 +129,7 @@ export default function Footer() {
               {/* UPDATED PRIVACY POLICY */}
               <li>
                 <a
-                  href="https://thecloudadvisory.com/privacy.html"
+                  href="./privacy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-yellow-400"
@@ -159,7 +141,7 @@ export default function Footer() {
               {/* UPDATED TERMS OF SERVICE */}
               <li>
                 <a
-                  href="https://thecloudadvisory.com/terms.html"
+                  href="./terms"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-yellow-400"

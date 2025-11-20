@@ -43,7 +43,7 @@ export default function Contact() {
                 <div>
                   <div className="text-gray-400 text-sm">Email</div>
                   <div className="text-white font-medium">
-                    contact@thecloudadvisory.com
+                    contact@pravinmishra.com
                   </div>
                 </div>
               </div>
