@@ -1,4 +1,4 @@
-import { Cloud, Linkedin, Twitter, Github, Mail, Instagram } from 'lucide-react';
+import { Linkedin, Twitter, Github, Mail, Instagram, Youtube } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,14 +11,14 @@ export default function Footer() {
 
           {/* BRAND + DESCRIPTION */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2">
-              <Cloud size={32} className="text-yellow-400" />
-
-              {/* FIXED BRAND NAME */}
-              <h2 className="text-2xl font-bold flex items-center">
-                <span className="text-white">TheCloud</span>
-                <span className="text-yellow-400">Advisory</span>
-              </h2>
+            
+            {/* Logo */}
+            <div className="flex items-center">
+              <img
+                src="/your-logo.png"
+                alt="Logo"
+                className="h-28 w-auto object-contain"
+              />
             </div>
 
             <p className="text-gray-400 leading-relaxed mb-6 max-w-md mt-4">
@@ -28,22 +28,23 @@ export default function Footer() {
 
             {/* SOCIAL ICONS */}
             <div className="flex space-x-4">
-
-         {/* LinkedIn */}
-<a
-  href="https://www.linkedin.com/in/pravin-mishra-aws-trainer/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center
-             hover:bg-yellow-400 hover:text-black transition-all duration-200"
->
-  <Linkedin size={20} />
-</a>
-
-
-              {/* Twitter */}
+              
+              {/* LinkedIn */}
               <a
-                href="#"
+                href="https://www.linkedin.com/in/pravin-mishra-aws-trainer/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center
+                           hover:bg-yellow-400 hover:text-black transition-all duration-200"
+              >
+                <Linkedin size={20} />
+              </a>
+
+              {/* Twitter / X */}
+              <a
+                href="https://x.com/pravinmishra88"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center
                            hover:bg-yellow-400 hover:text-black transition-all duration-200"
               >
@@ -52,44 +53,53 @@ export default function Footer() {
 
               {/* GitHub */}
               <a
-                href="#"
+                href="https://github.com/pravinmishraaws"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center
                            hover:bg-yellow-400 hover:text-black transition-all duration-200"
               >
                 <Github size={20} />
               </a>
 
-              {/* Email */}
+              {/* Instagram */}
               <a
-                href="#"
-                className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center
-                           hover:bg-yellow-400 hover:text-black transition-all duration-200"
-              >
-                <Mail size={20} />
-              </a>
-
-              {/* INSTAGRAM */}
-              <a
-                href="#"
+                href="https://www.instagram.com/awspravinmishra/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center
                            hover:bg-yellow-400 hover:text-black transition-all duration-200"
               >
                 <Instagram size={20} />
               </a>
 
-              {/* UDEMY - custom SVG icon */}
+              {/* YouTube */}
               <a
-                href="#"
+                href="https://www.youtube.com/@awswithpravinmishra"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center
                            hover:bg-yellow-400 hover:text-black transition-all duration-200"
               >
+                <Youtube size={22} />
+              </a>
+
+              {/* UDEMY */}
+              <a
+                href="https://www.udemy.com/user/pravin-mishra-30/?kw=prav&src=sac"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center
+                           hover:bg-yellow-400 hover:text-black transition-all duration-200"
+              >
+                {/* Udemy SVG */}
                 <svg
                   width="22"
                   height="22"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 256 256"
                   fill="currentColor"
                 >
-                  <path d="M12 2L3 7l9 5 9-5-9-5zm9 7l-9 5-9-5v6l9 5 9-5V9z" />
+                  <path d="M128 24L16 88l112 64 112-64L128 24zm112 88l-112 64L16 112v80l112 64 112-64v-80z"/>
                 </svg>
               </a>
 
@@ -111,7 +121,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="#about" className="text-gray-400 hover:text-yellow-400">About Us</a></li>
+              <li><a href="#about" className="text-gray-400 hover:text-yellow-400">About Me</a></li>
               <li><a href="#contact" className="text-gray-400 hover:text-yellow-400">Contact</a></li>
               <li><a href="#" className="text-gray-400 hover:text-yellow-400">Privacy Policy</a></li>
               <li><a href="#" className="text-gray-400 hover:text-yellow-400">Terms of Service</a></li>
@@ -124,7 +134,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Figuring Services. All rights reserved.
+              © {currentYear} Pravin Mishra. All rights reserved.
             </p>
             <p className="text-gray-400 text-sm">
               Crafted with <span className="text-yellow-400">cloud</span> excellence by Pravin Mishra

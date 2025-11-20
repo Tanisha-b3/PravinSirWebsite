@@ -38,20 +38,25 @@ export default function DMI() {
   ];
 
   const curriculum = [
-    ["Week 0", "Intro: AI, ChatGPT, Networking & VS Code setup"],
-    ["Week 1", "Linux essentials, file systems and shell scripting"],
-    ["Week 2", "Git & GitHub workflows, PRs, branching strategies"],
-    ["Week 3", "DevOps lifecycle: builds, tests, and releases"],
-    ["Week 4", "AWS fundamentals with hands-on labs"],
-    ["Week 5", "AWS challenge & optimization"],
-    ["Week 6", "Azure basics and hybrid-cloud patterns"],
-    ["Week 7", "Terraform: IaC best practices & modules"],
-    ["Week 8", "Ansible: configuration management & secrets"],
-    ["Week 9", "Azure DevOps/GitHub Actions: CI/CD pipelines"],
-    ["Week 10", "Docker: images, registries, and workflows"],
-    ["Week 11", "Kubernetes: cluster patterns & workloads"],
-    ["Week 12", "Observability: Prometheus, Grafana, ELK, SLOs"],
+    ["Week 0", "Internet, Networking & Basic Tools + ChatGPT Troubleshooting"],
+    ["Week 1", "Linux Essentials, Shell Scripting & System Administration"],
+    ["Week 2", "Git, GitHub, Branching, Pull Requests, Mini Project"],
+    ["Week 3", "DevOps Fundamentals, CI/CD Basics, Agile, Cloud Intro"],
+    ["Week 4", "AWS Cloud – IAM, S3, EC2, VPC, Deploy React App"],
+    ["Week 5", "More AWS – Databases, RDS, CloudWatch, Deployment"],
+    ["Week 6", "Azure Cloud – VM, Networking, Database, Deploy 3-tier App"],
+    ["Week 7", "Terraform – IaC, Providers, Variables, Modules, Infra Deployment"],
+    ["Week 8", "Ansible – Automation, Playbooks, Roles, Full Cloud Deployment"],
+    ["Week 9", "Azure DevOps – Pipelines, CI/CD, Production Deployment"],
+    ["Week 10", "Docker & Containerization – Dockerfile, Compose, Multi-stage"],
+    ["Week 11", "Kubernetes – Pods, ReplicaSets, Deployments, Scaling"],
+    ["Week 12", "Observability – Prometheus, Grafana, Dashboards, Monitoring"],
+    ["Week 13", "🎓 Final Project + Graduation"],
   ];
+
+
+
+
 
   const stats = [
     { value: "5k+", label: "Learners trained", icon: <Users size={20} className="text-yellow-300" /> },
@@ -248,50 +253,81 @@ export default function DMI() {
         </div>
       </section>
 
-      {/* CURRICULUM SECTION */}
-      <section id="curriculum" className="bg-gradient-to-b from-black to-gray-900 py-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              12-Week <span className="text-yellow-300">Learning Journey</span>
-            </h2>
-            <p className="text-gray-400 text-lg">From fundamentals to production DevOps mastery</p>
-          </div>
+     {/* CURRICULUM SECTION */}
+<section id="curriculum" className="bg-gradient-to-b from-black to-gray-900 py-20">
+  <div className="max-w-5xl mx-auto px-6">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        14-Week <span className="text-yellow-300">Learning Journey</span>
+      </h2>
+      <p className="text-gray-400 text-lg">
+        From fundamentals to production DevOps mastery
+      </p>
+    </div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 -translate-x-1/2 w-1 bg-gradient-to-b from-yellow-400 via-blue-400 to-purple-400 h-full rounded-full"></div>
+    {/* TIMELINE WRAPPER */}
+    <div className="relative pb-0">
 
-            {curriculum.map(([week, desc], index) => {
-              const isLeft = index % 2 === 0;
-              return (
-                <div
-                  key={index}
-                  className={`relative flex items-center mb-12 ${isLeft ? "justify-start" : "justify-end"}`}
-                >
-                  {/* Timeline dot */}
-                  <div className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-yellow-400 to-blue-400 rounded-full border-4 border-black z-10 shadow-lg"></div>
+      {/* Vertical Line - full height UNTIL spacer */}
+      <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 
+        bg-gradient-to-b from-yellow-400 via-blue-400 to-purple-400 rounded-full pointer-events-none">
+      </div>
 
-                  {/* Content card */}
-                  <div
-                    className={`w-full md:w-5/12 bg-gradient-to-br from-gray-900 to-black p-6 rounded-2xl border border-gray-800 shadow-xl hover:shadow-2xl hover:shadow-yellow-400/10 transition-all duration-300 hover:scale-105 ${
-                      isLeft ? "mr-6 md:mr-0" : "ml-6 md:ml-0"
-                    }`}
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400/20 to-blue-400/20 flex items-center justify-center border border-yellow-400/30">
-                        <span className="text-yellow-300 font-bold text-sm">{index + 1}</span>
-                      </div>
-                      <h3 className="font-bold text-yellow-300 text-lg">{week}</h3>
-                    </div>
-                    <p className="text-gray-300 leading-relaxed">{desc}</p>
-                  </div>
+      {/* Timeline Items */}
+      {curriculum.map(([week, desc], index) => {
+        const isLeft = index % 2 === 0;
+        return (
+          <div
+            key={index}
+            className={`relative flex items-center mb-12 ${
+              isLeft ? "justify-start" : "justify-end"
+            }`}
+          >
+            {/* Dot */}
+            <div className="absolute left-1/2 -translate-x-1/2 w-6 h-6 
+              bg-gradient-to-br from-yellow-400 to-blue-400 rounded-full 
+              border-4 border-black z-10 shadow-lg"></div>
+
+            {/* Card */}
+            <div
+              className={`w-full md:w-5/12 bg-gradient-to-br from-gray-900 to-black 
+                p-6 rounded-2xl border border-gray-800 shadow-xl transition-all 
+                hover:scale-105 ${
+                  isLeft ? "mr-6 md:mr-0" : "ml-6 md:ml-0"
+                }`}
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br 
+                  from-yellow-400/20 to-blue-400/20 flex items-center justify-center 
+                  border border-yellow-400/30">
+                  <span className="text-yellow-300 font-bold text-sm">{index + 1}</span>
                 </div>
-              );
-            })}
+                <h3 className="font-bold text-yellow-300 text-lg">{week}</h3>
+              </div>
+              <p className="text-gray-300 leading-relaxed">{desc}</p>
+            </div>
           </div>
-        </div>
-      </section>
+        );
+      })}
+
+      {/* Spacer - determines EXACT stopping point */}
+      <div className="h-12"></div>
+    </div>
+
+    {/* FINAL ACHIEVEMENT CARD */}
+    <div className="flex justify-center mt-0">
+      <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black 
+        p-6 rounded-2xl shadow-xl border border-yellow-600 text-center w-full md:w-[70%]">
+        <h3 className="text-2xl font-bold">🎉 Congratulations!</h3>
+        <p className="text-md mt-1 font-medium">
+          You have completed the 14-Week DevOps Micro Internship Journey.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
       {/* RULES & EXPECTATIONS */}
       <section className="w-full bg-black py-20">

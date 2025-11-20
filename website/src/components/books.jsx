@@ -36,6 +36,16 @@ export default function Books() {
       reviews: "21",
       link: "https://www.amazon.in/dp/1484291719",
     },
+      {
+    title: "Mastering DevOps",
+    desc: "Your Path to Success: A Practical Guide to Building, Deploying, and Scaling Applications with AWS DevOps.",
+    signature: "P. Mishra",
+    author: "Pravin Mishra",
+    img: "https://m.media-amazon.com/images/I/71Q43c34UzL._SY466_.jpg", // change if needed
+    rating: "5",
+    reviews: "1",
+    link: "https://www.amazon.in/dp/9356484880", // add correct link
+  },
   ];
 
   return (
