@@ -3,7 +3,7 @@ import { Briefcase, BookOpen, PenTool, Presentation } from "lucide-react";
 import signature from "../assets/signature.png";
 const About = () => {
   return (
-    <section className="w-full py-20 px-4 font-sans bg-white">
+    <section id="about" className="w-full py-20 px-4 font-sans bg-white">
       <div className="max-w-5xl mx-auto text-center">
 
         {/* Heading */}

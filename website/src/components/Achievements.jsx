@@ -1,5 +1,6 @@
 import React from "react";
 import { FaAmazon, FaYoutube, FaLinkedin, FaInstagram, FaBook } from "react-icons/fa";
+import CounterK from "./counterK";
 
 const LearnersTrust = () => {
   const data = [
@@ -93,14 +94,14 @@ const LearnersTrust = () => {
       <div className="max-w-6xl mx-auto mt-16 pt-10 border-t border-gray-200">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 text-center">
           {[
-            { number: "33K+", label: "Total Followers" },
-            { number: "11K+", label: "YouTube Subs" },
-            { number: "20K+", label: "LinkedIn Network" },
+            { number: "33000", label: "Total Followers" },
+            { number: "11000", label: "YouTube Subs" },
+            { number: "20000", label: "LinkedIn Network" },
             { number: "3", label: "Published Books" },
           ].map((stat, index) => (
             <div key={index}>
               <h3 className="text-3xl font-bold text-yellow-600">
-                {stat.number}
+                <CounterK end={stat.number} />
               </h3>
               <p className="text-gray-600 text-sm">{stat.label}</p>
             </div>

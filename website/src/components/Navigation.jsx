@@ -52,7 +52,7 @@ export default function Navigation() {
             </a>
 
             <a
-              href="https://pravinmishra.in/"
+              href="https://blog.pravinmishra.com/"
               target="_blank"
               rel="noopener noreferrer"
               className={linkClass}

@@ -14,6 +14,10 @@ import Contact from "./components/contact";
 import Footer from "./components/footer";
 import CloudDevOpsConsulting from "./components/Consulting";
 import DMI from "./components/dmi";
+import Maintenance from "./error-pages/Maintenance";
+import ErrorPage from "./error-pages/Error";
+import Privacy from "./privacy";
+import Terms from "./terms";
 
 function App() {
   return (
@@ -52,7 +56,14 @@ function App() {
             {/* OPTIONAL FUTURE ROUTES */}
             <Route path="/consulting" element={<CloudDevOpsConsulting />} />
             {/* Add others if needed */}
-
+            {/* Maintenance Page*/ }
+            <Route path="/maintenance" element={<Maintenance />} />
+            {/* Error Page*/ }
+            <Route path="/error" element={<ErrorPage />} />
+            {/* Privacy Page*/ }
+            <Route path="/privacy" element={<Privacy />} />
+            {/* Terms Page*/ }
+            <Route path="/terms" element={<Terms />} />
           </Routes>
 
           {/* Global Footer */}
