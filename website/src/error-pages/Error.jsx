@@ -37,21 +37,15 @@ export default function Error() {
         </button>
       </div>
 
-      <style jsx>{`
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(25px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fadeUp {
-          animation: fadeUp 1s ease;
-        }
-      `}</style>
+      <style>{`
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeUp {
+    animation: fadeUp 1s ease;
+  }
+`}</style>
     </div>
   );
 }
