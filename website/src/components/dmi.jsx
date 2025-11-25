@@ -185,7 +185,7 @@ const [direction, setDirection] = useState("right");
 
           {/* Subheading */}
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
-            A hands-on 12-week program where you deploy real apps, create CI/CD pipelines,
+            A hands-on 14-week program where you deploy real apps, create CI/CD pipelines,
             automate infrastructure, and learn directly from industry mentors.
           </p>
 
@@ -440,12 +440,12 @@ const [direction, setDirection] = useState("right");
       
 <section className="w-full bg-gradient-to-br from-black via-gray-900 to-black py-20">
   <div className="max-w-6xl mx-auto px-6">
-    <div className="text-center mb-16">
+    {/* <div className="text-center mb-16">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
         Voices of <span className="text-green-300">Success</span>
       </h2>
       <p className="text-gray-400 text-lg">Real feedback from our alumni community</p>
-    </div>
+    </div> */}
 
     {(() => {
  const testimonials = [
