@@ -31,12 +31,15 @@ jobs:
         run: npm install
 
       - name: Run unit tests (if present)
+        working-directory: ./website
         run: npm test --if-present
 
       - name: Lint code
+        working-directory: ./website
         run: npm run lint --if-present
 
       - name: Type check (TS only)
+        working-directory: ./website
         run: npm run type-check --if-present
 
       - name: Build Vite project
