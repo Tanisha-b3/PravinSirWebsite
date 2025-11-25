@@ -10,6 +10,7 @@ export default function Hero() {
       <img
         src={heroImg}
         alt="Hero Banner"
+        loading="lazy"
         className="absolute inset-0 w-full h-full object-cover pt-20"
       />
 

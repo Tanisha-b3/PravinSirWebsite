@@ -12,9 +12,9 @@ const LearnersTrust = () => {
     },
     {
       icon: <FaYoutube size={34} className="text-red-500" />,
-      title: "11K+ YouTube Subscribers",
+      title: "13K+ YouTube Subscribers",
       subtitle: "Weekly hands-on cloud tutorials",
-      url: "https://www.youtube.com/results?search_query=pravin+mishra",
+      url: "https://www.youtube.com/@awswithpravinmishra",
     },
     {
       icon: <FaLinkedin size={34} className="text-blue-700" />,

@@ -3,6 +3,7 @@ import { Cloud, ArrowRight, CheckCircle, Play, Users, Sparkles, Star, Clock, Awa
 import image from "../assets/photo.jpg"
 import image2 from "../assets/photo2.jpg"
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import image3 from "../assets/image3.jpg"
 // import { useRef } from "react";
 
 export default function DMI() {
@@ -498,13 +499,19 @@ const [direction, setDirection] = useState("right");
     role: "DMI – Cohort-1",
     feedback:
       "Proud to be part of the DevOps Micro Internship Cohort 1 led by Pravin Mishra — truly one of the best decisions I made this year. A transformative journey.",
-    image: image2, // keep your imported image variable
+    image: image2,
   },
+  {
+  name: "Syed Saleha",
+  role: "DMI – Cohort-1",
+  feedback:
+    "As a Cohort-1 learner, I can proudly say that every point here is 100% true. This program has genuinely transformed the way I understand and practice DevOps. A special thanks to Pravin Mishra Sir, and all Co-mentors for giving me this wonderful opportunity and guiding me throughout.",
+  image: image3,
+}
 ];
 
-  // ----------------- AUTO SCROLL ZIG-ZAG -----------------
   return (
-    <section className="w-full bg-gradient-to-br from-black via-gray-900 to-black py-20">
+    <section className="w-full bg-gradient-to-br from-black via-gray-900 to-black ">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* HEADING */}
@@ -640,19 +647,6 @@ const [direction, setDirection] = useState("right");
                         Learn More
                       </a>
                     </div>
-
-                    {/* <div className="mt-6 p-4 bg-black/50 rounded-xl border border-gray-700">
-                      <div className="text-sm text-gray-400">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Clock size={16} className="text-yellow-300" />
-                          <span>Application form </span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Users size={16} className="text-blue-300" />
-                          <span>Only 30 seats available</span>
-                        </div>
-                      </div>
-                    </div> */}
                   </div>
                 </div>
               </div>

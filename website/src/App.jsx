@@ -18,10 +18,13 @@ import Maintenance from "./error-pages/Maintenance";
 import ErrorPage from "./error-pages/Error";
 import Privacy from "./privacy";
 import Terms from "./terms";
+import ScrollToHash from "./components/Scroll";
 
 function App() {
   return (
     <Router>
+          <ScrollToHash />
+
       <div className="font-jakarta min-h-screen bg-[#F2F6FC]">
 
         <main>
@@ -32,31 +35,43 @@ function App() {
 
             {/* HOME PAGE */}
             <Route
-              path="/"
-              element={
-                <>
-                  <Hero />
-                 
-                  <About />
-                  <Services />
-                  <Courses />
-                   
-                  <Books />
-                 <LearnersTrust />
-                  <Contact />
+  path="/"
+  element={
+    <>
+      <section id="hero">
+        <Hero />
+      </section>
 
-                   {/* <SocialLinks /> */}
-                </>
-              }
-            />
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="services">
+        <Services />
+      </section>
+
+      <section id="courses">
+        <Courses />
+      </section>
+
+      <section id="books">
+        <Books />
+      </section>
+
+      <section id="achievements">
+        <LearnersTrust />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
+    </>
+  }
+/>
+
 
             {/* DMI PAGE */}
             <Route path="/dmi" element={<DMI />} />
-
-            {/* OPTIONAL FUTURE ROUTES */}
-            {/* <Route path="/consulting" element={<CloudDevOpsConsulting />} /> */}
-            {/* Add others if needed */}
-            {/* Maintenance Page*/ }
             <Route path="/maintenance" element={<Maintenance />} />
             {/* Error Page*/ }
             <Route path="/error" element={<ErrorPage />} />

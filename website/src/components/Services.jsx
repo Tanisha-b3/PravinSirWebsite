@@ -1,4 +1,5 @@
 import { BookOpen, Cloud, Users, ArrowRight } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -13,7 +14,8 @@ const services = [
       'Real-world Projects & Labs'
     ],
     color: 'blue',
-    highlight: 'Most Popular'
+    highlight: 'Most Popular',
+    link: '#courses'    // ⬅ Added link
   },
   {
     icon: BookOpen,
@@ -27,7 +29,8 @@ const services = [
       'Interview Preparation'
     ],
     color: 'yellow',
-    highlight: 'Best Seller'
+    highlight: 'Best Seller',
+    link: '#books'     // ⬅ Added link
   },
   {
     icon: Users,
@@ -41,7 +44,8 @@ const services = [
       'Team Training & Mentorship'
     ],
     color: 'blue',
-    highlight: 'Enterprise Grade'
+    highlight: 'Enterprise Grade',
+    link: '#contact'   // ⬅ Added link
   }
 ];
 
@@ -49,6 +53,8 @@ export default function Services() {
   return (
     <section id="services" className="fade-up py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* HEADER */}
         <div className="text-center mb-16">
           <div className="inline-block">
             <span className="text-yellow-400 font-semibold text-sm tracking-wider uppercase">Services</span>
@@ -62,6 +68,7 @@ export default function Services() {
           </p>
         </div>
 
+        {/* CARDS */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -75,24 +82,29 @@ export default function Services() {
                 key={index}
                 className="group relative bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-gray-300 transition-all duration-300 hover:shadow-2xl"
               >
+                {/* Highlight Badge */}
                 <div className="absolute top-4 right-4">
                   <span className={`text-xs font-semibold px-3 py-1 rounded-full ${service.color === 'yellow' ? 'bg-yellow-100 text-yellow-700' : 'bg-blue-100 text-blue-700'}`}>
                     {service.highlight}
                   </span>
                 </div>
 
+                {/* Icon */}
                 <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${colorClasses[service.color]} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <Icon size={32} className="text-white" />
                 </div>
 
+                {/* Title */}
                 <h3 className="text-2xl font-bold text-black mb-4">
                   {service.title}
                 </h3>
 
+                {/* Description */}
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
+                {/* Features */}
                 <ul className="space-y-3 mb-8">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
@@ -104,10 +116,14 @@ export default function Services() {
                   ))}
                 </ul>
 
-                <button className="group/btn w-full flex items-center justify-center space-x-2 bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-900 transition-all duration-200">
-                  <span>Learn More</span>
-                  <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-                </button>
+                {/* Button with Link */}
+                <Link to={service.link} className="block">
+                  <button className="group/btn w-full flex items-center justify-center space-x-2 bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-900 transition-all duration-200">
+                    <span>Learn More</span>
+                    <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
+
               </div>
             );
           })}
