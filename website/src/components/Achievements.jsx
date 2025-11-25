@@ -86,7 +86,7 @@ const LearnersTrust = () => {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 text-center">
           {[
             { number: "33000", label: "Total Followers" },
-            { number: "11000", label: "YouTube Subs" },
+            { number: "13000", label: "YouTube Subs" },
             { number: "20000", label: "LinkedIn Network" },
             { number: "3", label: "Published Books" },
           ].map((stat, index) => (
