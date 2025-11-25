@@ -1,0 +1,151 @@
+name: Build & Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'dist/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # needed for pushing dist & creating tags
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests (if present)
+        run: npm test --if-present
+
+      - name: Lint code
+        run: npm run lint --if-present
+
+      - name: Type check (TS only)
+        run: npm run type-check --if-present
+
+      - name: Build Vite project
+        run: npm run build
+
+      #############################################
+      # SANITY TESTS SECTION
+      #############################################
+
+      - name: Start Vite preview server
+        run: |
+          npx vite preview --port 4173 &
+          sleep 5
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Basic UI sanity tests (Playwright)
+        run: |
+          cat > sanity.test.js << 'EOF'
+          import { test, expect } from '@playwright/test';
+
+          const BASE = 'http://localhost:4173';
+
+          test('Homepage loads', async ({ page }) => {
+            const response = await page.goto(BASE);
+            expect(response.status()).toBe(200);
+            expect(await page.title()).not.toBe('');
+          });
+
+          test('No console errors', async ({ page }) => {
+            const errors = [];
+            page.on('console', msg => {
+              if (msg.type() === 'error') errors.push(msg.text());
+            });
+
+            await page.goto(BASE);
+            expect(errors).toHaveLength(0);
+          });
+
+          test('Routes work', async ({ page }) => {
+            await page.goto(BASE);
+
+            const links = await page.locator('a').all();
+
+            for (const link of links) {
+              const href = await link.getAttribute('href');
+              if (!href || href.startsWith('http')) continue;
+              const res = await page.goto(`${BASE}${href}`);
+              expect(res.status()).toBeLessThan(400);
+            }
+          });
+
+          test('Responsive layout check', async ({ page }) => {
+            for (const w of [375, 768, 1024, 1440]) {
+              await page.setViewportSize({ width: w, height: 800 });
+              await page.goto(BASE);
+              expect(await page.title()).not.toBe('');
+            }
+          });
+
+          test('404 works', async ({ page }) => {
+            const res = await page.goto(BASE + '/non-existing-page-xyz');
+            expect(res.status()).toBeLessThan(500);
+          });
+          EOF
+
+          npx playwright test sanity.test.js --reporter=list
+
+      - name: Lighthouse sanity audit
+        run: |
+          npm install -g lighthouse
+          lighthouse http://localhost:4173 --quiet --chrome-flags="--headless" \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json --output-path=./lh.json
+          echo "Lighthouse sanity check complete."
+
+      #############################################
+      # COMMIT DIST + TAG RELEASE
+      #############################################
+
+      - name: Commit dist folder
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add -f dist
+
+          if git diff --cached --quiet; then
+            echo "No dist changes detected."
+            exit 0
+          fi
+
+          git commit -m "CI: Build & release dist folder"
+
+      - name: Push commit
+        run: git push
+
+      - name: Create auto-incrementing tag
+        run: |
+          latest=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+
+          base=${latest#v}
+          major=$(echo $base | cut -d. -f1)
+          minor=$(echo $base | cut -d. -f2)
+          patch=$(echo $base | cut -d. -f3)
+
+          new_patch=$((patch + 1))
+          new_tag="v$major.$minor.$new_patch"
+
+          echo "Creating tag: $new_tag"
+          git tag $new_tag
+          git push origin $new_tag
