@@ -19,7 +19,7 @@ export default function Error() {
   }, []);
 
   return (
-    <div className="w-screen min-h-screen flex items-center justify-center bg-[#0d1117] p-5 text-center overflow-x-hidden overflow-y-auto">
+    <div id="error" className="w-screen min-h-screen flex items-center justify-center bg-[#0d1117] p-5 text-center overflow-x-hidden overflow-y-auto">
       <div className="max-w-md sm:max-w-lg animate-fadeUp px-4">
         <h1 className="text-4xl sm:text-5xl font-bold text-[#58a6ff] mb-4 break-words">
           Oops! Something went wrong.

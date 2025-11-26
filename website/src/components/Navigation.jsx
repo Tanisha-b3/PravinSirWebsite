@@ -64,7 +64,7 @@ export default function Navigation() {
             </a>
 
             <button onClick={() => goToSection("book")} className={linkClass}>
-              Book
+              Books
             </button>
 
             <RouterLink to="/dmi" className={linkClass}>

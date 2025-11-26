@@ -1,6 +1,6 @@
 import React from "react";
 import { Briefcase, BookOpen, PenTool, Presentation } from "lucide-react";
-import signature from "../assets/signature.png";
+import signature from "../assets/Signature.png";
 const About = () => {
   return (
     <section id="about" className="w-full py-20 px-4 font-sans bg-white">

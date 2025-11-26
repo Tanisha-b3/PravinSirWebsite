@@ -7,7 +7,7 @@ export default function Books() {
           if (entry.isIntersecting) entry.target.classList.add("fade-show");
         });
       },
-      { threshold: 0.25 }
+      { threshold: 0.05 }
     );
 
     document.querySelectorAll(".fade-section").forEach((el) => observer.observe(el));
